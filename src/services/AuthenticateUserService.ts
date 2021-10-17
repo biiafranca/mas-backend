@@ -13,9 +13,9 @@ interface AuthData {
 class AuthenticateUserService{
     public async execute({email, password}:AuthData): Promise<String | {}>{
 
-        const usersRepository = getRepository(User)
+        const usersRepository = getRepository(User);
 
-        const user = await usersRepository.findOne({email})
+        const user = await usersRepository.findOne({email});
 
         if(!user){
             return {
@@ -23,7 +23,7 @@ class AuthenticateUserService{
             }
         }
 
-        const comparePassword = compare(password, user.password)
+        const comparePassword = await compare(password, user.password);
 
         if(!comparePassword) {
             return {
@@ -31,14 +31,14 @@ class AuthenticateUserService{
             }
         }
 
-        const {secret, expiresIn} = authConfig.jwt
+        const {secret, expiresIn} = authConfig.jwt;
 
         const token = sign({"role":"user"}, secret, {
             subject: user.id,
             expiresIn
         })
 
-        return token;
+        return {auth: token};
 
     }
 }

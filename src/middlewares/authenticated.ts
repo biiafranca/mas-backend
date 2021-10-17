@@ -9,12 +9,12 @@ interface Token {
 
 export default function authenticated(request:Request, response:Response, next:NextFunction){
     
-    const headerAuthorization = request.headers.authorization
+    const headerAuthorization = request.headers.authorization;
 
     if(!headerAuthorization){
-        return {
+        return response.json({
             error: 'JWT token not found'
-        }
+        })
     }
 
     const [, token] = headerAuthorization.split(' ');
