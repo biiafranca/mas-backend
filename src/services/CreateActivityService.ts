@@ -5,12 +5,13 @@ import { response } from 'express';
 interface ActivityData {
     name:string;
     activity_date: Date;
+    grade: Number;
     course_unit_id:string;
 }
 
 class CreateActivityService {
     
-    public async execute({name, activity_date, course_unit_id}: ActivityData){
+    public async execute({name, activity_date, grade, course_unit_id}: ActivityData){
         
         const activitiesRepository = getRepository(Activity);
 
@@ -23,6 +24,7 @@ class CreateActivityService {
         const activity = {
             name,
             activity_date,
+            grade,
             course_unit_id
         }
 
