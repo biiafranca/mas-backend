@@ -5,26 +5,28 @@ import { response } from 'express';
 interface ActivityData {
     name:string;
     activity_date: Date;
+    grade: Number;
     course_unit_id:string;
 }
 
 class CreateActivityService {
     
-    public async execute({name, activity_date, course_unit_id}: ActivityData){
+    public async execute({name, activity_date, grade, course_unit_id}: ActivityData){
         
         const activitiesRepository = getRepository(Activity);
 
-        const checkActivityExists = await activitiesRepository.findOne({name});
+        const checkActivityToCourseUnitExists = await activitiesRepository.findOne({name,course_unit_id});
 
-        if(checkActivityExists){
-            throw new Error("Activity name already exists");
+        if(checkActivityToCourseUnitExists){
+            throw new Error("Activity to course unit already exists");
         }
       
-        const activity = {
+        const activity = activitiesRepository.create({
             name,
             activity_date,
+            grade,
             course_unit_id
-        }
+        })
 
         await activitiesRepository.save(activity);
 

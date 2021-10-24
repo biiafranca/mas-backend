@@ -19,10 +19,10 @@ class CreateCourseUnitService {
             throw new Error("Course Unit name already exists");
         }
       
-        const courseUnit = {
+        const courseUnit = courseUnitsRepository.create({
             name,
             description
-        }
+        })
 
         await courseUnitsRepository.save(courseUnit);
 
