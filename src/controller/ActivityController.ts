@@ -1,5 +1,7 @@
 import {Request, Response} from 'express';
 import {CreateActivityService} from '../services/CreateActivityService';
+import { GetActivitiesService } from '../services/GetActivitiesService';
+
 
 class ActivityController {
 
@@ -10,6 +12,13 @@ class ActivityController {
         const activity = await createActivity.execute(activityData);
         return response.json(activity);
         
+    }
+
+    async show(request:Request, response:Response) {
+        const userID = request.body.user;
+        const getActivities = new GetActivitiesService();
+        const activities = await getActivities.execute(userID);
+        return response.json(activities);
     }
 }
 
