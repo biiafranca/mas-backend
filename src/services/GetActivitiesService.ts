@@ -9,8 +9,10 @@ class GetActivitiesService{
     
     public async execute({id}:UserId){
 
+        console.log('Id do usuário da atividade: ' + id)
+
         const activityRepository = getRepository(Activity);
-        const activities = activityRepository.find();
+        const activities = activityRepository.find({relations: ["course_unit"]});
         
         if (!activities) {
             return {

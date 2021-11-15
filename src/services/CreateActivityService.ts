@@ -1,6 +1,5 @@
 import {getRepository} from 'typeorm'
 import {Activity} from '../models/Activity'
-import { response } from 'express';
 
 interface ActivityData {
     name:string;

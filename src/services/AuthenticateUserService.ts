@@ -11,7 +11,7 @@ interface AuthData {
 }
 
 class AuthenticateUserService{
-    public async execute({email, password}:AuthData): Promise<String | {}>{
+    public async execute({email, password}:AuthData): Promise<String | {}> {
 
         const usersRepository = getRepository(User);
 
@@ -38,7 +38,16 @@ class AuthenticateUserService{
             expiresIn
         })
 
-        return {auth: token};
+        const {id, name, email:emailUser} = user;
+
+        return {
+            user:{
+                id,
+                name,
+                email: emailUser
+            },
+            token
+        };
 
     }
 }
