@@ -12,9 +12,7 @@ export default function authenticated(request:Request, response:Response, next:N
     const headerAuthorization = request.headers.authorization;
 
     if(!headerAuthorization){
-        return response.json({
-            error: 'JWT token not found'
-        })
+        throw new Error('JWT token not found')
     }
 
     const [, token] = headerAuthorization.split(' ');
