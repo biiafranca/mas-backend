@@ -34,14 +34,14 @@ export class CreateActivities1633891941633 implements MigrationInterface {
                         default: "now()"
                     }
                 ],
-                foreignKeys: [
-                    {
-                        name: 'activity_course_unity',
-                        referencedTableName: 'course_units',
-                        referencedColumnNames: ['id'],
-                        columnNames: ['course_unit_id']
-                    }
-                ]
+                // foreignKeys: [
+                //     {
+                //         name: 'activity_course_unity',
+                //         referencedTableName: 'course_units',
+                //         referencedColumnNames: ['id'],
+                //         columnNames: ['course_unit_id']
+                //     }
+                // ]
             })
         )
     }
