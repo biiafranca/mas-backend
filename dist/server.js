@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 exports.__esModule = true;
-require("dotenv/config");
+// require("dotenv/config");
 var express_1 = __importDefault(require("express"));
 var cors_1 = __importDefault(require("cors"));
 require("./database");
