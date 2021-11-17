@@ -3,6 +3,10 @@ import {CreateUserService} from '../services/CreateUserService';
 import {GetUsersService} from '../services/GetUsersService';
 
 class UserController {
+
+    async test(request:Request, response:Response) {
+        return response.json({message:"Teste Heroku"})
+    }
     
     async create(request:Request, response:Response) {
         

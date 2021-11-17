@@ -18,6 +18,8 @@ const authenticateController = new AuthenticateController();
 
 const routes = Router();
 
+routes.get('/', userController.test);
+
 routes.post('/user', userController.create);
 routes.get('/user', authenticated, userController.show);
 
