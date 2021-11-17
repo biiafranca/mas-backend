@@ -1,7 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = {
+exports.__esModule = true;
+exports["default"] = {
     server: {
-        port: process.env.PORT || 3333,
-    },
+        port: process.env.PORT || 3333
+    }
 };

@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.User = void 0;
 var typeorm_1 = require("typeorm");
 var uuid_1 = require("uuid");
@@ -21,23 +21,23 @@ var User = /** @class */ (function () {
     __decorate([
         (0, typeorm_1.PrimaryColumn)(),
         __metadata("design:type", String)
-    ], User.prototype, "id", void 0);
+    ], User.prototype, "id");
     __decorate([
         (0, typeorm_1.Column)(),
         __metadata("design:type", String)
-    ], User.prototype, "name", void 0);
+    ], User.prototype, "name");
     __decorate([
         (0, typeorm_1.Column)(),
         __metadata("design:type", String)
-    ], User.prototype, "email", void 0);
+    ], User.prototype, "email");
     __decorate([
         (0, typeorm_1.Column)(),
         __metadata("design:type", String)
-    ], User.prototype, "password", void 0);
+    ], User.prototype, "password");
     __decorate([
         (0, typeorm_1.CreateDateColumn)(),
         __metadata("design:type", Date)
-    ], User.prototype, "create_at", void 0);
+    ], User.prototype, "create_at");
     User = __decorate([
         (0, typeorm_1.Entity)("users"),
         __metadata("design:paramtypes", [])

@@ -38,7 +38,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.AuthenticateUserService = void 0;
 var bcryptjs_1 = require("bcryptjs");
 var jsonwebtoken_1 = require("jsonwebtoken");
@@ -72,7 +72,7 @@ var AuthenticateUserService = /** @class */ (function () {
                                     error: 'incorrect password'
                                 }];
                         }
-                        _b = auth_1.default.jwt, secret = _b.secret, expiresIn = _b.expiresIn;
+                        _b = auth_1["default"].jwt, secret = _b.secret, expiresIn = _b.expiresIn;
                         token = (0, jsonwebtoken_1.sign)({ "role": "user" }, secret, {
                             subject: user.id,
                             expiresIn: expiresIn

@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.Activity = void 0;
 var typeorm_1 = require("typeorm");
 var uuid_1 = require("uuid");
@@ -22,32 +22,32 @@ var Activity = /** @class */ (function () {
     __decorate([
         (0, typeorm_1.PrimaryColumn)(),
         __metadata("design:type", String)
-    ], Activity.prototype, "id", void 0);
+    ], Activity.prototype, "id");
     __decorate([
         (0, typeorm_1.Column)(),
         __metadata("design:type", String)
-    ], Activity.prototype, "name", void 0);
+    ], Activity.prototype, "name");
     __decorate([
         (0, typeorm_1.Column)(),
         __metadata("design:type", Date)
-    ], Activity.prototype, "activity_date", void 0);
+    ], Activity.prototype, "activity_date");
     __decorate([
         (0, typeorm_1.Column)(),
         __metadata("design:type", Number)
-    ], Activity.prototype, "grade", void 0);
+    ], Activity.prototype, "grade");
     __decorate([
         (0, typeorm_1.Column)(),
         __metadata("design:type", String)
-    ], Activity.prototype, "course_unit_id", void 0);
+    ], Activity.prototype, "course_unit_id");
     __decorate([
         (0, typeorm_1.ManyToOne)(function () { return CourseUnit_1.CourseUnit; }, function (course_unit) { return course_unit.activities; }),
         (0, typeorm_1.JoinTable)(),
         __metadata("design:type", CourseUnit_1.CourseUnit)
-    ], Activity.prototype, "course_unit", void 0);
+    ], Activity.prototype, "course_unit");
     __decorate([
         (0, typeorm_1.CreateDateColumn)(),
         __metadata("design:type", Date)
-    ], Activity.prototype, "create_at", void 0);
+    ], Activity.prototype, "create_at");
     Activity = __decorate([
         (0, typeorm_1.Entity)("activities"),
         __metadata("design:paramtypes", [])

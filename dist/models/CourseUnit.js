@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 exports.CourseUnit = void 0;
 var typeorm_1 = require("typeorm");
 var uuid_1 = require("uuid");
@@ -22,23 +22,23 @@ var CourseUnit = /** @class */ (function () {
     __decorate([
         (0, typeorm_1.PrimaryColumn)(),
         __metadata("design:type", String)
-    ], CourseUnit.prototype, "id", void 0);
+    ], CourseUnit.prototype, "id");
     __decorate([
         (0, typeorm_1.Column)(),
         __metadata("design:type", String)
-    ], CourseUnit.prototype, "name", void 0);
+    ], CourseUnit.prototype, "name");
     __decorate([
         (0, typeorm_1.Column)(),
         __metadata("design:type", String)
-    ], CourseUnit.prototype, "description", void 0);
+    ], CourseUnit.prototype, "description");
     __decorate([
         (0, typeorm_1.OneToMany)(function () { return Activity_1.Activity; }, function (activity) { return activity.course_unit; }),
         __metadata("design:type", Array)
-    ], CourseUnit.prototype, "activities", void 0);
+    ], CourseUnit.prototype, "activities");
     __decorate([
         (0, typeorm_1.CreateDateColumn)(),
         __metadata("design:type", Date)
-    ], CourseUnit.prototype, "create_at", void 0);
+    ], CourseUnit.prototype, "create_at");
     CourseUnit = __decorate([
         (0, typeorm_1.Entity)("course_units"),
         __metadata("design:paramtypes", [])

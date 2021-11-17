@@ -2,7 +2,7 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var express_1 = require("express");
 var ActivityController_1 = require("./controller/ActivityController");
 var CourseUnitController_1 = require("./controller/CourseUnitController");
@@ -15,10 +15,10 @@ var courseUnitController = new CourseUnitController_1.CourseUnitController();
 var authenticateController = new AuthenticateController_1.AuthenticateController();
 var routes = (0, express_1.Router)();
 routes.post('/user', userController.create);
-routes.get('/user', authenticated_1.default, userController.show);
+routes.get('/user', authenticated_1["default"], userController.show);
 routes.post('/auth', authenticateController.create);
-routes.post('/activity', authenticated_1.default, activityController.create);
-routes.get('/activity', authenticated_1.default, activityController.show);
-routes.post('/courseunit', authenticated_1.default, courseUnitController.create);
-routes.get('/courseunit', authenticated_1.default, courseUnitController.show);
-exports.default = routes;
+routes.post('/activity', authenticated_1["default"], activityController.create);
+routes.get('/activity', authenticated_1["default"], activityController.show);
+routes.post('/courseunit', authenticated_1["default"], courseUnitController.create);
+routes.get('/courseunit', authenticated_1["default"], courseUnitController.show);
+exports["default"] = routes;

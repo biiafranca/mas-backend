@@ -2,18 +2,16 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
+exports.__esModule = true;
 var jsonwebtoken_1 = require("jsonwebtoken");
 var auth_1 = __importDefault(require("../config/auth"));
 function authenticated(request, response, next) {
     var headerAuthorization = request.headers.authorization;
     if (!headerAuthorization) {
-        return response.json({
-            error: 'JWT token not found'
-        });
+        throw new Error('JWT token not found');
     }
     var _a = headerAuthorization.split(' '), token = _a[1];
-    var verifyToken = (0, jsonwebtoken_1.verify)(token, auth_1.default.jwt.secret);
+    var verifyToken = (0, jsonwebtoken_1.verify)(token, auth_1["default"].jwt.secret);
     if (!verifyToken) {
         throw new Error();
     }
@@ -24,4 +22,4 @@ function authenticated(request, response, next) {
     };
     return next();
 }
-exports.default = authenticated;
+exports["default"] = authenticated;
