@@ -42,6 +42,13 @@ var GetUsersService_1 = require("../services/GetUsersService");
 var UserController = /** @class */ (function () {
     function UserController() {
     }
+    UserController.prototype.test = function (request, response) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, response.json({ message: "Teste Heroku" })];
+            });
+        });
+    };
     UserController.prototype.create = function (request, response) {
         return __awaiter(this, void 0, void 0, function () {
             var userData, createUser, user;

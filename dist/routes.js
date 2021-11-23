@@ -14,6 +14,7 @@ var activityController = new ActivityController_1.ActivityController();
 var courseUnitController = new CourseUnitController_1.CourseUnitController();
 var authenticateController = new AuthenticateController_1.AuthenticateController();
 var routes = (0, express_1.Router)();
+routes.get('/', userController.test);
 routes.post('/user', userController.create);
 routes.get('/user', authenticated_1["default"], userController.show);
 routes.post('/auth', authenticateController.create);
